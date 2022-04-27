@@ -31,24 +31,25 @@ class MilvusInsert:
         return str(mr)
 
 
-with towhee.api['path']() as api:
+with towhee.api['file']() as api:
     app_insert = (
-        api.image_decode['path', 'img']()
-        .image_embedding.timm['img', 'vec'](model_name='resnet50')
-        .runas_op['path', 'hash_path'](func=lambda path: abs(hash(path)) % (10 ** 8))  # delete when support String in Milvus2.1
-        .milvus_insert[('hash_path', 'vec'), 'mr'](collection=collection_name)
+        api.image_load['file', 'img']()
+        .save_image['img', 'path'](dir='tmp/images')
+        .image_embedding.timm['img', 'vec'](model_name='resnet101')
+        .runas_op['path', 'path'](func=lambda path: abs(hash(path)) % (10 ** 8))
+        .milvus_insert[('path', 'vec'), 'mr'](collection=collection_name)
         .select['mr']()
         .serve('/insert', app)
         )
 
 
-with towhee.api['path']() as api:
+with towhee.api['file']() as api:
     app_search = (
-        api.image_decode['path', 'img']()
-        .image_embedding.timm['img', 'vec'](model_name='resnet50')
+        api.image_load['file', 'img']()
+        .image_embedding.timm['img', 'vec'](model_name='resnet101')
         .milvus_search['vec', 'result'](collection=collection_name, **search_args)
         .runas_op['result', 'result'](func=lambda res: [x.path for x in res])
-        .select['path', 'result']()
+        .select['result']()
         .serve('/search', app)
         )
 
