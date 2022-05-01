@@ -1,76 +1,48 @@
-from fastapi import FastAPI
-import uvicorn
 import towhee
-from towhee import register
-from pymilvus import connections, Collection
-
-
-connections.connect(host='localhost', port='19530')
+import time
+import uvicorn
+from fastapi import FastAPI
+from diskcache import Cache
 
 app = FastAPI()
-collection_name = 'reverse_image_search'
-search_args = dict(
-    param={"params": {"nprobe": 10}},
-    output_fields=['path'],
-    limit=10
-)
+cache = Cache('./tmp')
+milvus_collection = towhee.connectors.milvus(uri='tcp://127.0.0.1:19530/reverse_image_search')
 
-
-@register(name='milvus-insert')
-class MilvusInsert:
-    def __init__(self, collection):
-        self.collection = collection
-        if isinstance(collection, str):
-            self.collection = Collection(collection)
-
-    def __call__(self, *args, **kwargs):
-        data = []
-        for iterable in args:
-            data.append([iterable])
-        mr = self.collection.insert(data)
-        return str(mr)
+@towhee.register(name='get_path_id')
+def get_path_id(path):
+    timestamp = int(time.time()*10000)
+    cache[path] = timestamp
+    cache[timestamp] = path
+    return int(timestamp)
 
 
 with towhee.api['file']() as api:
     app_insert = (
         api.image_load['file', 'img']()
         .save_image['img', 'path'](dir='tmp/images')
+        .get_path_id['path', 'id']()
         .image_embedding.timm['img', 'vec'](model_name='resnet101')
-        .runas_op['path', 'path'](func=lambda path: abs(hash(path)) % (10 ** 8))
-        .milvus_insert[('path', 'vec'), 'mr'](collection=collection_name)
-        .select['mr']()
+        .ann_insert[('id', 'vec'), 'res'](ann_index=milvus_collection)
+        .select['id', 'path']()
         .serve('/insert', app)
-        )
-
+    )
 
 with towhee.api['file']() as api:
     app_search = (
         api.image_load['file', 'img']()
         .image_embedding.timm['img', 'vec'](model_name='resnet101')
-        .milvus_search['vec', 'result'](collection=collection_name, **search_args)
-        .runas_op['result', 'result'](func=lambda res: [x.path for x in res])
-        .select['result']()
+        .ann_search['vec', 'result'](ann_index=milvus_collection)
+        .runas_op['result', 'res_file'](func=lambda res: [cache[x.id] for x in res])
+        .select['res_file']()
         .serve('/search', app)
-        )
-
-
-@register(name='milvus-count')
-class MilvusCount:
-    def __init__(self, collection):
-        self.collection = collection
-        if isinstance(collection, str):
-            self.collection = Collection(collection)
-
-    def __call__(self, *args):
-        return self.collection.num_entities
+    )
 
 
 with towhee.api() as api:
     app_count = (
-        api.milvus_count(collection=collection_name)
+        api.map(lambda _: milvus_collection.count())
         .serve('/count', app)
         )
 
-
 if __name__ == '__main__':
-    uvicorn.run(app=app)
+    uvicorn.run(app=app, host='0.0.0.0', port=8000)
