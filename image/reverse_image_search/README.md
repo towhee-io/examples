@@ -1,28 +1,53 @@
 # Reverse Image Search
 
-- Run notebook with [reverse_image_search.ipynb](./reverse_image_search.ipynb).
+This image search example mainly consists of two notebooks, and two python files about "how to load large images" and "start an online service".
 
-- Start server with fastapi.
 
-  ```bash
-  $ python api.py
-  INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-  ```
 
-  Test the server:
+I hope you can learn the basic operations of towhee and milvus through the [getting started notebook](./getting_started.ipynb). And the [advanced notebook](advanced.ipynb) will tell you how to choose the model and how to deploy the service.  
 
-  > Before running it, make sure you have created the `collection_name` collection in **api.py**. And the following example already has 1000 
-  > entities in Milvus' 'reverse_image_search' collection.
+[load.py](./load.py) is used to import your large-scale image data, and [server.py](./server.py) will start a FastAPI-based service.
 
-  ```bash
-  # upload an image and search
-  $ curl -X POST "http://0.0.0.0:8000/search"  --data-binary @extracted_test/n01443537/n01443537_3883.JPEG -H 'Content-Type: image/jpeg'
-  {"path":"/Users/chenshiyu/workspace/data/pic/1.jpg","result":[83682058,9605572,67200803,69780733,45421918,99335156,2345006,5632544,5632544,
-  28616422]}%
-  # upload an image and insert
-  $ curl -X POST "http://0.0.0.0:8000/insert"  --data-binary @extracted_test/n01443537/n01443537_3883.JPEG -H 'Content-Type: image/jpeg'
-  {"mr":"(insert count: 1, delete count: 0, upsert count: 0, timestamp: 432699123898515457)"}
-  # count the collection
-  $ curl -X POST "http://0.0.0.0:8000/count"
-  1001
-  ```
+## Learn from Notebook
+
+- [Getting started](getting_started.ipynb)
+
+In this notebook you will get the prerequisites (data, install milvus and towhee), how to complete a simple image system search and visualize results, and how to report accuracy and performance metrics.
+
+- [Advanced](./advanced.ipynb)
+
+In this notebook you will learn how to use various models and evaluate recall metrics, also providing object detection method. There is also about how to improve system performance and stability, and finally show you how to start the FastAPI service.
+
+## Load Large-scale Image Data
+
+I think you already know from previous notebooks that a very important step in reverse image search is loading the data. If you have large-scale data, you can try running the `set_parallel` and `exception_safe` methods of [load.py](./load.py), which make the import process faster and safer.
+
+> You can load your own data in this script.
+
+```bash
+$ python load.py
+Collection number: 1000
+```
+
+## Deploy with FastAPI
+
+After the data is loaded, you can start the search service for reverse image search, and also support inserting data services.
+
+```bash
+$ python server.py
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+```
+
+Next you can test the service with the following command.
+
+```bash
+# upload an image and search
+$ curl -X POST "http://0.0.0.0:8000/search"  --data-binary @extracted_test/n01443537/n01443537_3883.JPEG -H 'Content-Type: image/jpeg'
+
+# upload an image and insert
+$ curl -X POST "http://0.0.0.0:8000/insert"  --data-binary @extracted_test/n01443537/n01443537_3883.JPEG -H 'Content-Type: image/jpeg'
+
+# count the collection
+$ curl -X POST "http://0.0.0.0:8000/count"
+1001
+```
