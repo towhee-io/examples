@@ -4,9 +4,9 @@ This image search example mainly consists of two notebooks, and two python files
 
 
 
-I think everyone can learn the basic operations of Towhee and Milvus through the [gettig started notebook](./build_image_search_engine.ipynb). And the [deep dive notebook](**optimize_and_onlined_deploy.ipynb**) will show you how to choose the model and how to deploy the service.  
+I think everyone can learn the basic operations of Towhee and Milvus through the [**getting started notebook**](./build_image_search_engine.ipynb). And the [**deep dive notebook**](./optimize_and_onlined_deploy.ipynb) will show you how to choose the model and how to deploy the service.  
 
-[load.py](./load.py) is used to import your large-scale image data, and [server.py](./server.py) will start a FastAPI-based service.
+[**load.py**](./load.py) is used to import your large-scale image data, and [**server.py**](./server.py) will start a FastAPI-based service.
 
 ## Learn from Notebook
 
