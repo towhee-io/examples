@@ -16,11 +16,11 @@ In this notebook you will get the prerequisites, how to complete a simple molecu
 
 - [Deep Dive](./deep_dive_molecular_search.ipynb)
 
-In this notebook you will learn how to improve system performance and stability, and finally show you how to start the FastAPI service.
+In this notebook you will learn how to improve system stability, and finally show you how to start the FastAPI service.
 
 ## Load Large-scale Data
 
-I think you already know from previous notebooks that a very important step in molecular search is loading the data. If you have large-scale data, you can try running the `set_parallel` and `exception_safe` methods in [load.py](./load.py), which make the import process faster and safer.
+I think you already know from previous notebooks that a very important step in molecular search is loading the data. If you have large-scale data, you can try running with `exception_safe` in [load.py](./load.py), which make the import process safer.
 
 > You can load your own data in this script.
 

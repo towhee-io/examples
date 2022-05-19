@@ -20,15 +20,13 @@ def create_milvus_collection(collection_name, dim):
 
 def main():
     collection_name = 'molecular_search'
-    csv_file = 'pubchem_1w.smi'
+    csv_file = 'pubchem_10000.smi'
     algorithm = 'daylight'
-    parallel_num = 4
     milvus_collection = create_milvus_collection(collection_name, 2048)
     connections.connect(host='127.0.0.1', port='19530')
 
     (towhee.read_csv(csv_file)
      .exception_safe()
-     .set_parallel(parallel_num)
      .runas_op['id', 'id'](func=lambda x: int(x))
      .molecular_fingerprinting['smiles', 'fp'](algorithm=algorithm)
      .drop_empty()

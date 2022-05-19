@@ -8,7 +8,7 @@ from pymilvus import connections, Collection
 app = FastAPI()
 
 collection_name = 'molecular_search'
-csv_file = 'pubchem_1w.smi'
+csv_file = 'pubchem_10000.smi'
 algorithm = 'daylight'
 
 connections.connect(host='127.0.0.1', port='19530')
