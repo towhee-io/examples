@@ -38,6 +38,7 @@ def main():
      .runas_op['id', 'id'](func=lambda x: int(x))
      .image_decode['path', 'img']()
      .towhee.clip['img', 'vec'](model_name=model_name,modality='image')
+     .tensor_normalize['vec','vec']()
      .to_milvus['id', 'vec'](collection=milvus_collection, batch=100)
      )
     print('Collection number: ', milvus_collection.num_entities)

@@ -48,6 +48,7 @@ with towhee.api['file']() as api:
         .save_image['img', 'path'](dir='tmp/images')
         .get_path_id['path', 'id']()
         .towhee.clip['img', 'vec'](model_name=model_name,modality='image')
+        .tensor_normalize['vec','vec']()
         .milvus_insert[('id', 'vec'), 'res'](collection=milvus_collection)
         .select['id', 'path']()
         .serve('/insert', app)
@@ -57,6 +58,7 @@ with towhee.api['file']() as api:
 with towhee.api['text']() as api:
     app_search = (
         api.towhee.clip['text', 'vec'](model_name=model_name,modality='text')
+        .tensor_normalize['vec','vec']()
         .milvus_search['vec', 'result'](collection=milvus_collection)
         .runas_op['result', 'res_file'](func=lambda res: str([id_img[x.id] for x in res]))
         .select['res_file']()
