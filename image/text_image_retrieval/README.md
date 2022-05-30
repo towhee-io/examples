@@ -17,7 +17,7 @@ In this notebook you will get the prerequisites, how to complete a simple image 
 
 ## Load Large-scale Image Data
 
-I think you already know from previous notebooks that a very important step in reverse image search is loading the data. If you have large-scale data, you can try running the `set_parallel` method in [load.py](./load.py), which make the import process faster and safer.
+I think you already know from previous notebooks that a very important step in  text-image search is loading the data. If you have large-scale data, you can try running the `set_parallel` method in [load.py](./load.py), which make the import process faster and safer.
 
 > You can load your own data in this script.
 
@@ -28,7 +28,7 @@ Collection number: 1000
 
 ## Deploy with FastAPI
 
-After the data is loaded, you can start the search service for reverse image search, and also support inserting data services.
+After the data is loaded, you can start the search service for text-image search, and also support inserting data services.
 
 ```bash
 $ python server.py
@@ -39,7 +39,7 @@ Next you can test the service with the following command.
 
 ```bash
 # upload a text and search
-$ curl -X POST "http://0.0.0.0:8000/search"  --data a green train
+$ curl -X POST "http://0.0.0.0:8000/search"  --data dogs
 
 # upload an image and insert
 $ curl -X POST "http://0.0.0.0:8000/insert"  --data-binary @extracted_test/n01443537/n03478589_8874.JPEG -H 'Content-Type: image/jpeg'
