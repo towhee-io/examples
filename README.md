@@ -24,9 +24,18 @@ There are many interesting examples that use Towhee to process various unstructu
 
 <table>
     <tr>
-        <td><b>Fields</b></td>
-        <td width="60%"><b>Examples</b></td>
+        <td><b></b></td>
+        <td width="60%"><b>Bootcamp</b></td>
         <td><b>Operators</b></td>
+    </tr>
+    <tr>
+        <td rowspan="1">Getting Started</td>
+        <td ><a href="getting_started">Getting Started with Towhee</a>
+             <p>An introduction to DataCollection, which can help you better learn the data processing pipeline with Towhee.</p>
+        </td>
+        <td >
+            <a></a>
+        </td>
     </tr>
     <tr>
         <td rowspan="3">Image</td>
@@ -88,7 +97,7 @@ There are many interesting examples that use Towhee to process various unstructu
     </tr>
     <tr>
         <td >
-            <p>Video Classification(TBD)</p>
+            <a href="video/video_tagging">Video Classification</a>
             <p>Video Classification is the task of producing a label that is relevant to the video given its frames.</p>
         </td>
         <td >
@@ -97,7 +106,7 @@ There are many interesting examples that use Towhee to process various unstructu
     </tr>
     <tr>
         <td >
-            <a href="video/text-video-retrieval">Text Video Search</a><br />
+            <a href="video/text_video_retrieval">Text Video Search</a><br />
             <p>Search for similar or related videos with the input text.</p>
         </td>
         <td >
@@ -114,15 +123,27 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
-        <td rowspan="1">Chemical</td>
-        <td ><a href="chemical/molecular_search">Molecular Search</a>
+        <td rowspan="1">Medical</td>
+        <td ><a href="medical/molecular_search">Molecular Search</a>
              <p>Search for similar molecular formulas based on the Tanimoto metric, and also supports searching for substructures and superstructures.</p>
         </td>
         <td >
             <a href="https://towhee.io/molecular-fingerprinting/rdkit">RDKit</a>
         </td>
     </tr>
+    <tr>
+        <td rowspan="1">Data Science</td>
+        <td ><a href="data_science/credit_card_approval_prediction">Credit Card Approval Prediction</a>
+             <p>Predict whether the bank issues a credit card to the applicant, and the credit scores can objectively quantify the magnitude of risk.</p>
+        </td>
+        <td >
+            <p>Logistic Regression</p>
+          	<p>Decision Tree</p>
+          	<p>SVM</p>
+        </td>
+    </tr>
 </table>
+
 
 
 ## Contributing
