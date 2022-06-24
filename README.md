@@ -38,7 +38,7 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
-        <td rowspan="3">Image</td>
+        <td rowspan="5">Image</td>
         <td ><a href="image/reverse_image_search">Reverse Image Search</a><br />
              <p>Search for images that are similar or related to the input image, it supports a lot of models such as ResNet, VGG, EfficientNet, ViT, etc.</p>
         </td>
@@ -59,11 +59,30 @@ There are many interesting examples that use Towhee to process various unstructu
     </tr>
     <tr>
         <td >
+            <a href="image/image_deduplication">Image Deduplication</a><br />
+            <p>Find exact or near-exact duplicates within a collection of images.</p>
+        </td>
+        <td >
+            <a href="https://towhee.io/towhee/image-decode">Image Decode</a><br />
+            <a href="https://towhee.io/image-embedding/timm">Timm</a><br />
+        </td>
+    </tr>
+    <tr>
+        <td >
             <a href="image/text_image_search">Text Image Search</a><br />
             <p>Returns images related to the description of the input query text, which is cross-modal retrieval.</p>
         </td>
         <td >
             <a href="https://towhee.io/towhee/clip">CLIP</a><br />
+        </td>
+    </tr>
+        <tr>
+        <td >
+            <a href="image/visualization">Embedding Visualization</a><br />
+            <p>Show some examples for model interpretability with some visualization tools.</p>
+        </td>
+        <td >
+            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">Embedding Visualization</a><br />
         </td>
     </tr>
     <tr>
@@ -115,7 +134,7 @@ There are many interesting examples that use Towhee to process various unstructu
     </tr>
     <tr>
         <td rowspan="1">Audio</td>
-        <td ><p>Audio Classification(TBD)</p>
+        <td ><a href="audio/audio_classification">Audio Classification</a></br>
              <p>Categorize certain sounds into certain categories, such as ambient sound classification and speech recognition.</p>
         </td>
         <td >
@@ -140,6 +159,15 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Logistic Regression</p>
           	<p>Decision Tree</p>
           	<p>SVM</p>
+        </td>
+    </tr>
+        <tr>
+        <td rowspan="1">Training</td>
+        <td ><a href="fine_tune">Fine Tune</a></br>
+             <p>Tutorial about how to fine tuen with towhee.</p>
+        </td>
+        <td >
+            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a>
         </td>
     </tr>
 </table>
