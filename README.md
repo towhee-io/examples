@@ -38,7 +38,7 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
-        <td rowspan="3">Image</td>
+        <td rowspan="4">Image</td>
         <td ><a href="image/reverse_image_search">Reverse Image Search</a><br />
              <p>Search for images that are similar or related to the input image, it supports a lot of models such as ResNet, VGG, EfficientNet, ViT, etc.</p>
         </td>
@@ -64,6 +64,15 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
         <td >
             <a href="https://towhee.io/towhee/clip">CLIP</a><br />
+        </td>
+    </tr>
+    <tr>
+        <td >
+            <a href="image/visualization">Embedding Visualization</a><br />
+            <p>Show some examples for model interpretability with some visualization tools.</p>
+        </td>
+        <td >
+            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">embedding_visualization</a><br />
         </td>
     </tr>
     <tr>
