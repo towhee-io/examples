@@ -68,11 +68,11 @@ There are many interesting examples that use Towhee to process various unstructu
     </tr>
     <tr>
         <td >
-            <a href="image/visualization">Embedding Visualization</a><br />
-            <p>Show some examples for model interpretability with some visualization tools.</p>
+            <a href="image/visualization">Visualization</a><br />
+            <p>Under the hood: Embedding models and ANNS indexes in image search.</p>
         </td>
         <td >
-            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">embedding_visualization</a><br />
+            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">Embedding Visualization</a><br />
         </td>
     </tr>
     <tr>
@@ -152,6 +152,7 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
 </table>
+
 
 
 
