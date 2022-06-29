@@ -86,6 +86,15 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
+        <td >
+            <a href="image/visualization">Embedding Visualization</a><br />
+            <p>Show some examples for model interpretability with some visualization tools.</p>
+        </td>
+        <td >
+            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">embedding_visualization</a><br />
+        </td>
+    </tr>
+    <tr>
         <td rowspan="2">NLP</td>
         <td ><a href="nlp/question_answering">Q&A System</a><br />
              <p>Process user questions and give answers through natural language technology.</p>
