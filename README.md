@@ -84,6 +84,24 @@ There are many interesting examples that use Towhee to process various unstructu
             <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">embedding_visualization</a><br />
         </td>
     </tr>
+        <tr>
+        <td >
+            <a href="image/visualization">Embedding Visualization</a><br />
+            <p>Show some examples for model interpretability with some visualization tools.</p>
+        </td>
+        <td >
+            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">Embedding Visualization</a><br />
+        </td>
+    </tr>
+    <tr>
+        <td >
+            <a href="image/visualization">Embedding Visualization</a><br />
+            <p>Show some examples for model interpretability with some visualization tools.</p>
+        </td>
+        <td >
+            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">embedding_visualization</a><br />
+        </td>
+    </tr>
     <tr>
         <td rowspan="2">NLP</td>
         <td ><a href="nlp/question_answering">Q&A System</a><br />
@@ -158,6 +176,15 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Logistic Regression</p>
           	<p>Decision Tree</p>
           	<p>SVM</p>
+        </td>
+    </tr>
+        <tr>
+        <td rowspan="1">Training</td>
+        <td ><a href="fine_tune">Fine Tune</a></br>
+             <p>Tutorial about how to fine tuen with towhee.</p>
+        </td>
+        <td >
+            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a>
         </td>
     </tr>
 </table>
