@@ -160,6 +160,16 @@ There are many interesting examples that use Towhee to process various unstructu
           	<p>SVM</p>
         </td>
     </tr>
+    <tr>
+        <td rowspan="1">Training</td>
+        <td ><a href="fine_tune">Fine Tune</a></br>
+             <p>Tutorial about how to fine tuen with towhee.</p>
+        </td>
+        <td >
+            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a>
+        </td>
+    </tr>
+
 </table>
 
 
