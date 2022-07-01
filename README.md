@@ -104,7 +104,7 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
-        <td rowspan="3">Video</td>
+        <td rowspan="4">Video</td>
         <td ><a href="video/reverse_video_search">Reverse Video Search</a><br />
              <p>It takes a video as input to search for similar videos.</p>
         </td>
@@ -129,6 +129,15 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
         <td >
             <a href="https://towhee.io/towhee/clip4clip">CLIP4Clip</a><br />
+        </td>
+    </tr>
+    <tr>
+        <td >
+            <a href="video/deepfake_detection">Deepfake Detection</a><br />
+            <p>Predict the probability of a fake video for a given video.</p>
+        </td>
+        <td >
+            <a href="https://towhee.io/towhee/deepfake">Deepfake</a><br />
         </td>
     </tr>
     <tr>
