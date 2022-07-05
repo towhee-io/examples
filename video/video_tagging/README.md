@@ -6,6 +6,6 @@ This video tagging bootcamp mainly includes one notebook for each type of taggin
 
 ## Learn from Notebook
 
-- [Video Classification](./1_video_classification.ipynb)
+- [Action Classification](./action_classification.ipynb)
 
-In this notebook you will build a basic video classification system with sample data (of 20 human activities), visualize predicted labels, and measure the system with performance metrics. Moreover, you can try optimization methods for accuracy and efficiency. At the end, you are able to build up a playable video classification system with 5 lines of code.
+In this notebook you will build a basic video action classification system with sample data (of 20 human activities), visualize predicted labels, and measure the system with performance metrics. Moreover, you can try optimization methods for accuracy and efficiency. At the end, you are able to build up a playable video classification system with 5 lines of code.
