@@ -1,0 +1,26 @@
+# training
+epochs: 20
+lr: 0.001
+weight_decay: 0
+drop_prob: 0.7
+topK: 50
+
+# network
+accum: split_stack
+hidden_size:
+  - 500
+  - 75
+num_basis: 2
+rgc_bn: True
+rgc_relu: True
+dense_bn: True
+dense_relu: True
+bidec_drop: False
+
+# Github dataset
+root: ../data/tiny
+dataset_name: tiny
+
+
+# device
+gpu_id: -1 # -1 mean cpu
