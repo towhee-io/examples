@@ -1,5 +1,3 @@
-__author__ = 'zx'
-
 from .char_embedding import *
 from .copy_generator import *
 from .embeddings import *
