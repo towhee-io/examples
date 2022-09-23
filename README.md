@@ -85,7 +85,7 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
-        <td rowspan="2">NLP</td>
+        <td rowspan="3">NLP</td>
         <td ><a href="nlp/question_answering">Q&A System</a><br />
              <p>Process user questions and give answers through natural language technology.</p>
         </td>
@@ -101,6 +101,15 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
         <td >
             <a></a>
+        </td>
+    </tr>
+    <tr>
+        <td >
+          <p><a href="nlp/text_search">Text Search</a></p>
+            <p>Search most similar text to the query text across all data. </p>
+        </td>
+        <td >
+          <a href="https://towhee.io/text-embedding/dpr">DPR</a><br />
         </td>
     </tr>
     <tr>
@@ -178,6 +187,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a>
         </td>
     </tr>
+
 
 </table>
 
