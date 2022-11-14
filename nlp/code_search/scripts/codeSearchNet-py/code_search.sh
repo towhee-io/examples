@@ -8,20 +8,12 @@ function make_dir () {
 
 SRC_DIR=../..
 DATA_DIR=${SRC_DIR}/data
-MODEL_DIR=${SRC_DIR}/tmp2_ex4
+MODEL_DIR=${SRC_DIR}/tmp2_ex3
 
 make_dir $MODEL_DIR
 
-# CODE_EXTENSION=original_subtoken
-# JAVADOC_EXTENSION=original
-
 RGPU=0,1
 MODEL_NAME=code_search_clip
-# --dataset_name codeSearchNet-py python code_summarization_public \
-# --train_src train/code.original_subtoken all_code code.original_subtoken \
-# --train_tgt train/doc_embed.npy all_doc_embed.npy all_doc_embed.npy \
-
-# --pretrained python2nl \
 
 function train () {
 
@@ -77,52 +69,5 @@ PYTHONPATH=$SRC_DIR CUDA_VISIBLE_DEVICES=$RGPU python -W ignore ${SRC_DIR}/main/
 --split_decoder False
 }
 
-
-function test () {
-
-echo "============TESTING============"
-
-PYTHONPATH=$SRC_DIR CUDA_VISIBLE_DEVICES=$RGPU python -W ignore ${SRC_DIR}/main/train.py \
---only_test True \
---data_workers 5 \
---dataset_name $DATASET \
---data_dir ${DATA_DIR}/ \
---model_dir $MODEL_DIR \
---model_name $MODEL_NAME \
---dev_src test/code.${CODE_EXTENSION} \
---dev_tgt test/doc.${JAVADOC_EXTENSION} \
---uncase True \
---max_src_len 400 \
---max_tgt_len 30 \
---max_examples -1 \
---test_batch_size 64
-
-}
-
-
-function val_MRR () {
-
-echo "============TESTING============"
-
-PYTHONPATH=$SRC_DIR CUDA_VISIBLE_DEVICES=$RGPU python -W ignore ${SRC_DIR}/main/train_code_search.py \
---only_eval_calculate_MRR True \
---data_workers 5 \
---dataset_name codeSearchNet-py \
---data_dir ${DATA_DIR}/ \
---model_dir $MODEL_DIR \
---model_name $MODEL_NAME \
---dev_src test/code.original_subtoken \
---dev_tgt test/doc_embed.npy \
---uncase True \
---max_src_len 400 \
---max_tgt_len 30 \
---max_examples -1 \
---test_batch_size 128
-
-}
-
-
 # train $1 $2
 train
-# val_MRR
-# test $1 $2

@@ -58,26 +58,38 @@ def remove_part_tokens(tokens, select, n=10):
         return head + stay
 
 
-def data_augumentation(ex, count_ex, ex_num_epoch, max_src_len):
-    code = ex['code']
-    selects = torch.randint(0, 2, (3,)).tolist()
-    if selects[0] == 0:
-        tokens = extract_token(code.tokens)
-    else:
-        tokens = remove_punctuation(code.tokens)
-    tokens = pretokenize(tokens, selects[1])
-    if count_ex > ex_num_epoch:  # after one epoch, remove 1/20 --> 1/4
-        # 2 epoch a move
-        n = 20 - count_ex // ex_num_epoch // 2
-        n = 4 if n < 4 else n
-        tokens = remove_part_tokens(tokens, selects[2], n=n)
-    # truncate and pad
-    tokens = tokens[:max_src_len]
-    pad_length = max_src_len - len(tokens)
-    tokens += ['<blank>'] * pad_length
+# def data_augumentation(ex, count_ex, ex_num_epoch, max_src_len):
+#     code = ex['code']
+#     selects = torch.randint(0, 2, (3,)).tolist()
+#     if selects[0] == 0:
+#         tokens = extract_token(code.tokens)
+#     else:
+#         tokens = remove_punctuation(code.tokens)
+#     tokens = pretokenize(tokens, selects[1])
+#     if count_ex > ex_num_epoch:  # after one epoch, remove 1/20 --> 1/4
+#         # 2 epoch a move
+#         n = 20 - count_ex // ex_num_epoch // 2
+#         n = 4 if n < 4 else n
+#         tokens = remove_part_tokens(tokens, selects[2], n=n)
+#     # truncate and pad
+#     tokens = tokens[:max_src_len]
+#     pad_length = max_src_len - len(tokens)
+#     tokens += ['<blank>'] * pad_length
 
-    code.tokens = tokens
-    return ex
+#     code.tokens = tokens
+#     return ex
+
+
+# def data_augumentation(ex, max_src_len):
+#     code = ex['code']
+#     tokens = remove_punctuation(code.tokens)
+#     tokens = pretokenize(tokens, 1)
+#     # truncate and pad
+#     tokens = tokens[:max_src_len]
+#     pad_length = max_src_len - len(tokens)
+#     tokens += ['<blank>'] * pad_length
+#     code.tokens = tokens
+#     return ex
 
 
 def vectorize(ex, model):

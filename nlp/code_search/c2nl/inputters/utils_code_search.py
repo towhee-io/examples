@@ -45,9 +45,9 @@ def process_examples(lang_id,
         if len(code_tokens) != len(code_type):
             return None
 
-    # code_tokens = code_tokens[:max_src_len]
-    # pad_length = max_src_len - len(code_tokens)
-    # code_tokens += ['<blank>'] * pad_length
+    code_tokens = code_tokens[:max_src_len]
+    pad_length = max_src_len - len(code_tokens)
+    code_tokens += ['<blank>'] * pad_length
 
     code_type = code_type[:max_src_len]
     if len(code_tokens) == 0:
