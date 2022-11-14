@@ -4,7 +4,7 @@ import torch
 from torch import optim
 from torch.nn.utils import clip_grad_norm_
 from c2nl.config import override_model_args
-from code_search.c2nl.models.code_nl_model import Transformer
+from c2nl.models.code_nl_model import Transformer
 
 
 logger = logging.getLogger(__name__)

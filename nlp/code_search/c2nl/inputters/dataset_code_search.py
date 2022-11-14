@@ -3,7 +3,7 @@ import numpy as np
 from torch.utils.data import Dataset
 from torch.utils.data.sampler import Sampler
 
-from c2nl.inputters.vector_code_search import vectorize, data_augumentation
+from c2nl.inputters.vector_code_search import vectorize
 
 
 # ------------------------------------------------------------------------------
@@ -26,9 +26,8 @@ class CommentDataset(Dataset):
         return len(self.examples)
 
     def __getitem__(self, index):
-        ex = data_augumentation(self.examples[index], self.count_ex,
-                                self.ex_num_epoch, self.max_src_len)
-        return vectorize(ex, self.model)
+        # ex = data_augumentation(self.examples[index], self.max_src_len)
+        return vectorize(self.examples[index], self.model)
 
     def lengths(self):
         return [(len(ex['code'].tokens), len(ex['summary'].tokens))
