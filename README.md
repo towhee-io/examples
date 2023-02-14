@@ -1,7 +1,7 @@
 # Towhee Examples
 <p align="center">
   <a href="https://github.com/towhee-io/towhee">
-    <img src="https://github.com/towhee-io/towhee/raw/main/towhee_logo.png#gh-light-mode-only" alt="Logo">
+    <img src="https://github.com/towhee-io/towhee/raw/main/towhee_logo.png#gh-light-mode-only" alt="Logo"  width="60%">
   </a>
   <p align="center" style="padding-left: 10px; padding-right: 10px">
       Towhee Examples are used to analyze the unstructured data with towhee, such as reverse image search, reverse video search, audio classification, question and answer systems, molecular search, etc.
@@ -10,6 +10,7 @@
     <a href="https://github.com/towhee-io/towhee/issues">Report Bug or Request Feature</a>
   </p>
 </p>
+
 
 
 ## About Towhee Examples
@@ -85,22 +86,13 @@ There are many interesting examples that use Towhee to process various unstructu
         </td>
     </tr>
     <tr>
-        <td rowspan="3">NLP</td>
+        <td rowspan="2">NLP</td>
         <td ><a href="nlp/question_answering">Q&A System</a><br />
              <p>Process user questions and give answers through natural language technology.</p>
         </td>
         <td >
             <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Atext-embedding">Text Embedding</a><br />
             <a href="https://towhee.io/text-embedding/dpr">DPR</a><br />
-        </td>
-    </tr>
-    <tr>
-        <td >
-            <p>Recommendation System(TBD)</p>
-            <p>Predict the "rating" or "preference" a user would give to an item.</p>
-        </td>
-        <td >
-            <a></a>
         </td>
     </tr>
     <tr>
@@ -187,6 +179,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a>
         </td>
     </tr>
+
 
 
 </table>
