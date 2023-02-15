@@ -31,8 +31,8 @@ There are many interesting examples that use Towhee to process various unstructu
     </tr>
     <tr>
         <td rowspan="1">Getting Started</td>
-        <td ><a href="data_collection">Getting Started with Towhee</a>
-             <p>An introduction to DataCollection, which can help you better learn the data processing pipeline with Towhee.</p>
+        <td ><a href="pipeline">Getting Started with Pipeline</a>
+             <p>An introduction to `Pipeline`, which can help you better learn the data processing pipeline with Towhee.</p>
         </td>
         <td >
             <a></a>
