@@ -4,4 +4,4 @@ Search for text in the text dataset, and it will find the most similar results t
 
 
 
-This example will show you how to search article in Medium data  through the [**notebook**](.search_article_in_medium.ipynb). 
+This example will show you how to search article in Medium data  through the [**notebook**](search_article_in_medium.ipynb). 
