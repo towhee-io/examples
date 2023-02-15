@@ -1,8 +1,0 @@
-numpy==1.22.3
-pandas==1.4.3
-aiohttp==3.8.1
-xxhash==3.0.0
-beautifulsoup4==4.11.1
-selenium==4.4.3
-lxml==4.9.1
-fake-useragent==0.1.11
