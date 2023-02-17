@@ -8,8 +8,4 @@ This text-video retrieval example mainly consists of two notebooks, and I think 
 
 - [Getting started](./1_text_video_retrieval_engine.ipynb)
 
-In this notebook you will get prerequisites, build and use a basic text-video retrieval system, visualize sample results, make simple optimizations, and measure the system with performance metrics.
-
-- [Deep Dive](./2_deep_dive_text_video_retrieval.ipynb)
-
 In this notebook, you will learn how to reduce resource usage, speed up system,  and ensure stability.
