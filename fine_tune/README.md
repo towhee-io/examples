@@ -1,4 +1,4 @@
-#Fine tune
+# Fine tune 
 We will describe how to fine-tune the towhee operator. Including the introduction of some basic concepts and components, as well as examples of fine-tuning operators for various mainstream deep learning tasks.   
 
 
@@ -12,7 +12,7 @@ We will describe how to fine-tune the towhee operator. Including the introductio
 ### Computer Vision
 - [Fine-tune on MNIST](./2_fine_tune_with_mnist.ipynb) 
 - [Fine-tune bird classification model](./3_train_a_bird_classification_model.ipynb) 
-- [Fine-tune on CUB_200_2011](./5_train_cub_200_2011.ipynb) 
+- [Fine-tune on CUB-200-2011](./5_train_cub_200_2011.ipynb) 
 - [Fine-tune video deduplication model](./9_fine_tune_video_deduplication_model.ipynb)
 
 ### Natural Language Processing
