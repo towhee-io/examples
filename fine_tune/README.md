@@ -22,3 +22,6 @@ We will describe how to fine-tune the towhee operator. Including the introductio
 
 ### Audio
 - [Fine-tune audio embedding](./7_fine_tune_audio_embedding_operator.ipynb)
+
+### Multi-modality
+- [Fine-tune CLIP model](https://github.com/towhee-io/examples/blob/main/image/text_image_search/2_deep_dive_text_image_search.ipynb)
