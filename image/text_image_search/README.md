@@ -10,3 +10,6 @@ This text-image search example mainly consists of two notebooks, and I think eve
 
 In this notebook you will get the prerequisites, how to complete a simple text-image search and visualize results,and show you how to start the FastAPI service.
 
+- [Deep dive](./2_deep_dive_text_image_search.ipynb)
+
+In this notebook you will learn how to finetune text-image search on your own dataset and how to deploy a accelerated service for text-image search application.
