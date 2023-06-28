@@ -44,7 +44,7 @@ There are many interesting examples that use Towhee to process various unstructu
              <p>Search for images that are similar or related to the input image, it supports a lot of models such as ResNet, VGG, EfficientNet, ViT, etc.</p>
         </td>
         <td >
-            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a><br />
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Computer-Vision&task_name=Image-Embedding">Image Embedding</a><br />
             <a href="https://towhee.io/image-embedding/timm">Timm</a><br />
         </td>
     </tr>
@@ -64,7 +64,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Find exact or near-exact duplicates within a collection of images.</p>
         </td>
         <td >
-            <a href="https://towhee.io/towhee/image-decode">Image Decode</a><br />
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Computer-Vision&task_name=Image-Decode">Image Decode</a><br />
             <a href="https://towhee.io/image-embedding/timm">Timm</a><br />
         </td>
     </tr>
@@ -74,7 +74,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Returns images related to the description of the input query text, which is cross-modal retrieval.</p>
         </td>
         <td >
-            <a href="https://towhee.io/towhee/clip">CLIP</a><br />
+            <a href="https://towhee.io/image-text-embedding/clip">CLIP</a><br />
         </td>
     <tr>
         <td >
@@ -82,7 +82,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Under the hood: Embedding models and ANNS indexes in image search.</p>
         </td>
         <td >
-            <a href="https://github.com/towhee-io/towhee/tree/main/towhee/models/visualization">embedding_visualization</a><br />
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Computer-Vision&task_name=Image-Embedding">Image Embedding</a><br />
         </td>
     </tr>
     <tr>
@@ -91,7 +91,7 @@ There are many interesting examples that use Towhee to process various unstructu
              <p>Process user questions and give answers through natural language technology.</p>
         </td>
         <td >
-            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Atext-embedding">Text Embedding</a><br />
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Natural-Language-Processing&task_name=Text-Embedding">Text Embedding</a><br />
             <a href="https://towhee.io/text-embedding/dpr">DPR</a><br />
         </td>
     </tr>
@@ -110,8 +110,8 @@ There are many interesting examples that use Towhee to process various unstructu
              <p>It takes a video as input to search for similar videos.</p>
         </td>
         <td >
-            <a href="https://towhee.io/video-classification?index=1&size=30&type=2">Video Classification</a><br />
-            <a href="https://towhee.io/video-classification/pytorchvideo">Pytorchvideo</a><br />
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Computer-Vision&task_name=Action-Classification">Action Classification</a><br />
+            <a href="https://towhee.io/action-classification/pytorchvideo">Pytorchvideo</a><br />
         </td>
     </tr>
     <tr>
@@ -120,7 +120,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Video Classification is the task of producing a label that is relevant to the video given its frames.</p>
         </td>
         <td >
-            <a href="https://towhee.io/video-classification?index=1&size=30&type=2">Video Classification</a><br />
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Computer-Vision&task_name=Action-Classification">Action Classification</a><br />
         </td>
     </tr>
     <tr>
@@ -129,7 +129,7 @@ There are many interesting examples that use Towhee to process various unstructu
             <p>Search for similar or related videos with the input text.</p>
         </td>
         <td >
-            <a href="https://towhee.io/towhee/clip4clip">CLIP4Clip</a><br />
+            <a href="https://towhee.io/video-text-embedding/clip4clip">CLIP4Clip</a><br />
         </td>
     </tr>
     <tr>
@@ -147,7 +147,7 @@ There are many interesting examples that use Towhee to process various unstructu
              <p>Categorize certain sounds into certain categories, such as ambient sound classification and speech recognition.</p>
         </td>
         <td >
-            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aaudio-classification">Audio Classification</a>
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Audio&task_name=Audio-Classification">Audio Classification</a>
         </td>
     </tr>
     <tr>
@@ -165,9 +165,6 @@ There are many interesting examples that use Towhee to process various unstructu
              <p>Predict whether the bank issues a credit card to the applicant, and the credit scores can objectively quantify the magnitude of risk.</p>
         </td>
         <td >
-            <p>Logistic Regression</p>
-          	<p>Decision Tree</p>
-          	<p>SVM</p>
         </td>
     </tr>
     <tr>
@@ -176,15 +173,10 @@ There are many interesting examples that use Towhee to process various unstructu
              <p>Tutorial about how to fine tuen with towhee.</p>
         </td>
         <td >
-            <a href="https://towhee.io/operators?limit=30&page=1&filter=1%3Aimage-embedding">Image Embedding</a>
+            <a href="https://towhee.io/tasks/detail/operator?field_name=Computer-Vision&task_name=Image-Embedding">Image Embedding</a>
         </td>
     </tr>
-
-
-
 </table>
-
-
 
 
 ## Contributing
