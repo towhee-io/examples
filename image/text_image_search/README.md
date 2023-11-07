@@ -13,3 +13,7 @@ In this notebook you will get the prerequisites, how to complete a simple text-i
 - [Deep dive](./2_deep_dive_text_image_search.ipynb)
 
 In this notebook you will learn how to finetune text-image search on your own dataset and how to deploy a accelerated service for text-image search application.
+
+- [Chinese version](./3_build_chinese_image_search_engine.ipynb)
+
+In this notebook you will learn how to how to build custom towhee ops and complete a simple chinese text-image search and image-image search task.
